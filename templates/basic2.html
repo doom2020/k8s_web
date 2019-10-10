@@ -9,16 +9,18 @@
     {% endblock %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <style>
-        .div{
-            margin: 0;
-            padding: 0;
+        ul{
+            list-style-type: none;
+        }
+        #menuShow  a{
+            color: black;
         }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
-            <a href="#">K8S-System</a>
+            <a href="#">Educational-Management-System</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -29,55 +31,58 @@
     </nav>
     <div class="container-fluid" style="margin-top: 50px;margin-bottom: 50px;padding: 0">
         <div class="row">
-            <div class="col-md-2" style="background-color: #5bc0de">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="menuOne" data-toggle="dropdown">
-                        Server-machine-manage
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="menuOne">
-                        <li><a href="#">function1</a></li>
-                        <li><a href="#">function2</a></li>
-                        <li><a href="#">function3</a></li>
-                        <li><a href="#">function4</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="menuTwo" data-toggle="dropdown">
-                        Server-machine-manage2
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="menuTwo">
-                        <li><a href="#">function1</a></li>
-                        <li><a href="#">function2</a></li>
-                        <li><a href="#">function3</a></li>
-                        <li><a href="#">function4</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="menuThree" data-toggle="dropdown">
-                        Server-machine-manage3
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="menuThree">
-                        <li><a href="#">function1</a></li>
-                        <li><a href="#">function2</a></li>
-                        <li><a href="#">function3</a></li>
-                        <li><a href="#">function4</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="menuFour" data-toggle="dropdown">
-                        Server-machine-manage4
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="menuFour">
-                        <li><a href="#">function1</a></li>
-                        <li><a href="#">function2</a></li>
-                        <li><a href="#">function3</a></li>
-                        <li><a href="#">function4</a></li>
-                    </ul>
-                </div>
+            <div class="col-md-2" style="background-color: lightsteelblue;">
+                <ul style="font-size: 25px;" id="menuShow">
+                    <li class="col-md-12">
+                        <a class="menu-left">Teachers</a>
+                        <ul style="padding: 0;display: none">
+                            <li><a>function1</a></li>
+                            <li><a>function2</a></li>
+                            <li><a>function3</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-md-12">
+                        <a class="menu-left">Students</a>
+                        <ul style="padding: 0;display: none">
+                            <li><a>function1</a></li>
+                            <li><a>function2</a></li>
+                            <li><a>function3</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-md-12">
+                        <a class="menu-left">News</a>
+                        <ul style="padding: 0;display: none">
+                            <li><a>function1</a></li>
+                            <li><a>function2</a></li>
+                            <li><a>function3</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-md-12">
+                        <a class="menu-left">Personal</a>
+                        <ul style="padding: 0;display: none">
+                            <li><a>function1</a></li>
+                            <li><a>function2</a></li>
+                            <li><a>function3</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-md-12">
+                        <a class="menu-left">Online-Tool</a>
+                        <ul style="padding: 0;display: none">
+                            <li><a>function1</a></li>
+                            <li><a>function2</a></li>
+                            <li><a>function3</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-md-12">
+                        <a class="menu-left">Contract</a>
+                        <ul style="padding: 0;display: none">
+                            <li><a>function1</a></li>
+                            <li><a>function2</a></li>
+                            <li><a>function3</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
             <div class="col-md-10" style="background-color: #4cae4c">
                 <p>content</p>
@@ -93,4 +98,9 @@
 </body>
 <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+    $('.menu-left').unbind().bind('click', function (event) {
+        $(this).siblings('ul').slideDown().parent('li').siblings('li').children('ul').slideUp();
+    })
+</script>
 </html>
